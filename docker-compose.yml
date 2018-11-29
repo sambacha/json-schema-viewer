@@ -1,0 +1,12 @@
+version: "3.2"
+
+services:
+  schemabrowser:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+      args: []
+    image: sd2e/schemabrowser:latest
+    container_name: schemabrowser
+    ports:
+      - "9005:9001"
