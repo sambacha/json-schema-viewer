@@ -12,8 +12,7 @@ if (typeof JSV === 'undefined') {
         /**
          * The root schema to load.
          */
-        schema: process.env.JSV_SCHEMA_URI,
-
+        schema: 'https://sd2e.github.io/python-datacatalog/schemas/sample_set.json',
         /**
          * If true, render diagram only on init, without the jQuery Mobile UI.
          * The legend and nav tools will be rendered with any event listeners.
@@ -23,7 +22,7 @@ if (typeof JSV === 'undefined') {
         /**
          * The version of the schema.
          */
-        version: process.env.JSV_SCHEMA_VERSION,
+        version: '1.0.0',
 
         /**
          * Currently focused node
@@ -1285,9 +1284,12 @@ if (typeof JSV === 'undefined') {
          * @param {function} callback Function to run after the diagram is created
          */
         createDiagram: function (callback) {
+            console.log('JSV: ' + JSV.schema);
             tv4.asyncLoad([JSV.schema], function () {
 
+                console.log('compileData');
                 JSV.compileData(tv4.getSchema(JSV.schema), false, 'schema');
+                console.log('!compileData');
 
                 // Calculate total nodes, max label length
                 var totalNodes = 0;

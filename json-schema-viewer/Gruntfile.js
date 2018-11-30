@@ -5,7 +5,7 @@
  * Grunt module.
  * @module grunt
  */
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     'use strict';
 
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
          * @see http://stackoverflow.com/a/10065754/922323
          */
 
-        pkg : grunt.file.readJSON('package.json'),
+        pkg: grunt.file.readJSON('package.json'),
 
         /*----------------------------------( BANNERS )----------------------------------*/
 
@@ -39,28 +39,28 @@ module.exports = function(grunt) {
          * @see http://gruntjs.com/getting-started#an-example-gruntfile
          */
 
-        banner : {
+        banner: {
 
-            'short' : '/*! ' +
-                      '<%= pkg.title || pkg.name %>' +
-                      '<%= pkg.version ? " v" + pkg.version : "" %>' +
-                      '<%= pkg.licenses ? " | " + _.pluck(pkg.licenses, "type").join(", ") : "" %>' +
-                      ' - For included libraries, see source for additional licensing info.' +
-                      '<%= pkg.homepage ? " | " + pkg.homepage : "" %>' +
-                      ' */',
+            'short': '/*! ' +
+                '<%= pkg.title || pkg.name %>' +
+                '<%= pkg.version ? " v" + pkg.version : "" %>' +
+                '<%= pkg.licenses ? " | " + _.pluck(pkg.licenses, "type").join(", ") : "" %>' +
+                ' - For included libraries, see source for additional licensing info.' +
+                '<%= pkg.homepage ? " | " + pkg.homepage : "" %>' +
+                ' */',
 
-            'long' : '/**\n' +
-                     ' * <%= pkg.title || pkg.name %>\n' +
-                     '<%= pkg.description ? " * " + pkg.description + "\\n" : "" %>' +
-                     ' *\n' +
-                     '<%= pkg.author.name ? " * @author " + pkg.author.name + "\\n" : "" %>' +
-                     '<%= pkg.author.url ? " * @link " + pkg.author.url + "\\n" : "" %>' +
-                     '<%= pkg.homepage ? " * @docs " + pkg.homepage + "\\n" : "" %>' +
-                     //' * @copyright Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>.\n' +
-                     '<%= pkg.licenses ? " * @license Released under the " + _.pluck(pkg.licenses, "type").join(", ") + ".\\n" : "" %>' +
-                     '<%= pkg.version ? " * @version " + pkg.version + "\\n" : "" %>' +
-                     ' * @date <%= grunt.template.today("yyyy/mm/dd") %>\n' +
-                     ' */\n\n',
+            'long': '/**\n' +
+                ' * <%= pkg.title || pkg.name %>\n' +
+                '<%= pkg.description ? " * " + pkg.description + "\\n" : "" %>' +
+                ' *\n' +
+                '<%= pkg.author.name ? " * @author " + pkg.author.name + "\\n" : "" %>' +
+                '<%= pkg.author.url ? " * @link " + pkg.author.url + "\\n" : "" %>' +
+                '<%= pkg.homepage ? " * @docs " + pkg.homepage + "\\n" : "" %>' +
+                //' * @copyright Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>.\n' +
+                '<%= pkg.licenses ? " * @license Released under the " + _.pluck(pkg.licenses, "type").join(", ") + ".\\n" : "" %>' +
+                '<%= pkg.version ? " * @version " + pkg.version + "\\n" : "" %>' +
+                ' * @date <%= grunt.template.today("yyyy/mm/dd") %>\n' +
+                ' */\n\n',
 
         },
 
@@ -74,7 +74,7 @@ module.exports = function(grunt) {
          * @see http://blog.stevenlevithan.com/archives/date-time-format
          */
 
-        now : grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
+        now: grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
 
         /**
          * @member {config} ver
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
          * @see http://blog.stevenlevithan.com/archives/date-time-format
          */
 
-        ver : 1,
+        ver: 1,
 
         /*----------------------------------( BOWER )----------------------------------*/
 
@@ -127,9 +127,9 @@ module.exports = function(grunt) {
          * @see https://github.com/gruntjs/grunt-contrib-watch
          */
 
-        watch : {
+        watch: {
 
-            files : [
+            files: [
 
                 '<%= jshint.init %>',
                 './json-schema-viewer.js',
@@ -141,7 +141,7 @@ module.exports = function(grunt) {
 
             ],
 
-            tasks : ['default'],
+            tasks: ['default'],
 
         },
 
@@ -155,15 +155,15 @@ module.exports = function(grunt) {
          * @see http://www.jshint.com/docs/
          */
 
-        jshint : {
+        jshint: {
 
-            options : {
+            options: {
 
-                jshintrc : '.jshintrc', // Defined options and globals.
+                jshintrc: '.jshintrc', // Defined options and globals.
 
             },
 
-            init : [
+            init: [
 
                 './Gruntfile.js',
                 './json-schema-viewer.js',
@@ -183,17 +183,19 @@ module.exports = function(grunt) {
          * @see https://github.com/onehealth/grunt-env
          */
 
-        env : {
+        env: {
 
-            dev : {
+            dev: {
 
-                NODE_ENV : 'DEVELOPMENT',
+                NODE_ENV: 'DEVELOPMENT',
+                JSV_SCHEMA_URI: 'https://sd2e.github.io/python-datacatalog/schemas/sample_set.json'
 
             },
 
-            prod : {
+            prod: {
 
-                NODE_ENV : 'PRODUCTION',
+                NODE_ENV: 'PRODUCTION',
+                JSV_SCHEMA_URI: 'https://sd2e.github.io/python-datacatalog/schemas/sample_set.json'
 
             },
 
@@ -208,21 +210,21 @@ module.exports = function(grunt) {
          * @see https://github.com/gruntjs/grunt-contrib-clean
          */
 
-        clean : {
+        clean: {
 
-            options : {
+            options: {
 
-                force : true, // Allows for deletion of folders outside current working dir (CWD). Use with caution.
+                force: true, // Allows for deletion of folders outside current working dir (CWD). Use with caution.
 
             },
 
-            prod : [
+            prod: [
 
                 './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/**/*',
 
             ],
 
-            doc : [
+            doc: [
 
                 './jsdoc/**/*',
 
@@ -240,19 +242,19 @@ module.exports = function(grunt) {
          * @see http://lisperator.net/uglifyjs/
          */
 
-        uglify : {
+        uglify: {
 
-            prod : {
+            prod: {
 
-                options : {
+                options: {
 
-                    banner : '<%= banner.short %>',
+                    banner: '<%= banner.short %>',
 
                 },
 
-                files : {
+                files: {
 
-                    './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/<%= pkg.name %>.min.js' : [
+                    './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/<%= pkg.name %>.min.js': [
                         //'./files/scripts/jquery.js',
                         //'./files/scripts/jquery.*.js',
                         './bower_components/uri.js/src/URI.js',
@@ -268,7 +270,7 @@ module.exports = function(grunt) {
                         './lib/example.js',
 
                     ],
-                    './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/lib/preinit.js' : [
+                    './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/lib/preinit.js': [
                         './lib/preinit.js',
 
                     ],
@@ -289,46 +291,46 @@ module.exports = function(grunt) {
          * @see http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#output_style
          */
 
-        sass : {
+        sass: {
 
-            options : {
+            options: {
 
-                noCache : true,  // Don't cache to sassc files.
-                precision : 14, // How many digits of precision to use when outputting decimal numbers.
+                // noCache : true,  // Don't cache to sassc files.
+                precision: 14, // How many digits of precision to use when outputting decimal numbers.
                 //sourcemap : 'none', // Generate CSS source maps?
 
             },
 
-            dev : {
+            dev: {
 
-                options : {
+                options: {
 
                     //banner : '<%= banner.long %>', TODO:this is no longer valid use https://github.com/mattstyles/grunt-banner
-                    style : 'expanded', // Output style. Can be nested, compact, compressed, expanded.
+                    style: 'expanded', // Output style. Can be nested, compact, compressed, expanded.
 
                 },
 
-                files : {
+                files: {
 
-                    './styles/<%= pkg.name %>.css' : './styles/sass/<%= pkg.name %>.scss',
+                    './styles/<%= pkg.name %>.css': './styles/sass/<%= pkg.name %>.scss',
                     //'../dev/styles/development.css' : './files/styles/development.scss',
 
                 },
 
             },
 
-            prod : {
+            prod: {
 
-                options : {
+                options: {
 
                     //banner : '<%= banner.short %>', see above
-                    style : 'compressed',
+                    style: 'compressed',
 
                 },
 
-                files : {
+                files: {
 
-                    './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/styles/<%= pkg.name %>.min.css' : './styles/sass/<%= pkg.name %>.scss',
+                    './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/styles/<%= pkg.name %>.min.css': './styles/sass/<%= pkg.name %>.scss',
 
                 },
 
@@ -347,47 +349,48 @@ module.exports = function(grunt) {
          * @see http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically
          */
 
-        preprocess : {
+        preprocess: {
 
-            options : {
+            options: {
 
-                context : {
+                context: {
 
-                    title : '<%= pkg.title %>',
-                    description : '<%= pkg.description %>',
-                    name : '<%= pkg.name %>',
-                    version : '<%= pkg.version %>',
-                    homepage : '<%= pkg.homepage %>',
-                    production : '<%= pkg.production %>',
-                    now : '<%= now %>',
-                    ver : '<%= ver %>',
+                    title: '<%= pkg.title %>',
+                    description: '<%= pkg.description %>',
+                    name: '<%= pkg.name %>',
+                    version: '<%= pkg.version %>',
+                    homepage: '<%= pkg.homepage %>',
+                    production: '<%= pkg.production %>',
+                    now: '<%= now %>',
+                    ver: '<%= ver %>',
+                    JSV_SCHEMA_URI: 'https://sd2e.github.io/python-datacatalog/schemas/sample_set.json'
 
                 },
 
             },
 
-            dev : {
+            dev: {
 
                 files: [
 
                     {
 
-                        src : './templates/index.html',
-                        dest : './dev.html',
+                        src: './templates/index.html',
+                        dest: './dev.html',
 
                     },
 
                     {
 
-                        src : './templates/basic.html',
-                        dest : './basic.html',
+                        src: './templates/basic.html',
+                        dest: './basic.html',
 
                     },
 
                     {
 
-                        src : './templates/latest.html',
-                        dest : './index.html',
+                        src: './templates/latest.html',
+                        dest: './index.html',
 
                     },
 
@@ -395,28 +398,28 @@ module.exports = function(grunt) {
 
             },
 
-            prod : {
+            prod: {
 
                 files: [
 
                     {
 
-                        src : './templates/index.html',
-                        dest : './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/index.html',
+                        src: './templates/index.html',
+                        dest: './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/index.html',
 
                     },
 
                     {
 
-                        src : './templates/latest.html',
-                        dest : './prod/index.html',
+                        src: './templates/latest.html',
+                        dest: './prod/index.html',
 
                     },
 
                     {
 
-                        src : './templates/basic.html',
-                        dest : './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/basic.html',
+                        src: './templates/basic.html',
+                        dest: './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/basic.html',
 
                     },
 
@@ -437,42 +440,42 @@ module.exports = function(grunt) {
          */
 
 
-        copy : {
+        copy: {
 
-            prod : {
+            prod: {
 
-                files : [
+                files: [
 
                     {
 
-                        expand : true,
-                        cwd : './',
-                        src : [
+                        expand: true,
+                        cwd: './',
+                        src: [
                             'images/**/*',
                             '!images/junk/**',
                         ],
-                        dest : './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/',
+                        dest: './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/',
 
                     },
                     {
 
-                        expand : true,
-                        cwd : './bower_components/mdjson-schemas/',
-                        src : [
+                        expand: true,
+                        cwd: './bower_components/mdjson-schemas/',
+                        src: [
                             '**/*.json',
                             '!*bower.json',
                         ],
-                        dest : './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/schemas',
+                        dest: './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/schemas',
 
                     },
                     {
 
-                        expand : true,
-                        cwd : './jsdoc/',
-                        src : [
+                        expand: true,
+                        cwd: './jsdoc/',
+                        src: [
                             '**/*',
                         ],
-                        dest : './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/docs',
+                        dest: './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/docs',
 
                     }
 
@@ -482,54 +485,54 @@ module.exports = function(grunt) {
 
         },
 
-      /**
-       * @member {task} gh-pages
-       * Deploy to GitHub Pages.
-       *
-       * @see https://github.com/tschaub/grunt-gh-pages
-       */
+        /**
+         * @member {task} gh-pages
+         * Deploy to GitHub Pages.
+         *
+         * @see https://github.com/tschaub/grunt-gh-pages
+         */
 
-      'gh-pages' : {
-        options: {
-          base: './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/'
+        'gh-pages': {
+            options: {
+                base: './prod/<%= pkg.version %>/<%= now %>/<%= ver %>/'
+            },
+            src: ['**/*']
         },
-        src: ['**/*']
-      },
 
-      /**
-       * @member {task} jsdoc
-       * Build docs.
-       *
-       * @see https://github.com/krampstudio/grunt-jsdoc
-       */
+        /**
+         * @member {task} jsdoc
+         * Build docs.
+         *
+         * @see https://github.com/krampstudio/grunt-jsdoc
+         */
 
-      jsdoc : {
-          dist : {
-              src: ['<%= pkg.name %>.js', 'README.md', 'Gruntfile.js'],
-              options: {
-                  destination: 'jsdoc',
-                  verbose: true,
-                  //template : "./node_modules/grunt-jsdoc/node_modules/ink-docstrap/template",
-                  //configure : "node_modules/grunt-jsdoc/node_modules/ink-docstrap/template/jsdoc.conf.json",
-              }
-          }
-      },
+        jsdoc: {
+            dist: {
+                src: ['<%= pkg.name %>.js', 'README.md', 'Gruntfile.js'],
+                options: {
+                    destination: 'jsdoc',
+                    verbose: true,
+                    //template : "./node_modules/grunt-jsdoc/node_modules/ink-docstrap/template",
+                    //configure : "node_modules/grunt-jsdoc/node_modules/ink-docstrap/template/jsdoc.conf.json",
+                }
+            }
+        },
 
-      /**
-       * @member {task} connect
-       * Start a static web server. Use <code>grunt connect:server:keepalive</code>
-       * for a persistent server instance. Default port is <b>9001</b>.
-       *
-       * @see https://github.com/gruntjs/grunt-contrib-connect
-       */
+        /**
+         * @member {task} connect
+         * Start a static web server. Use <code>grunt connect:server:keepalive</code>
+         * for a persistent server instance. Default port is <b>9001</b>.
+         *
+         * @see https://github.com/gruntjs/grunt-contrib-connect
+         */
 
-      connect: {
-        server: {
-          options: {
-            port: 9001
-          }
-        }
-      },
+        connect: {
+            server: {
+                options: {
+                    port: 9001
+                }
+            }
+        },
     });
 
     /*----------------------------------( TASKS )----------------------------------*/

@@ -3,7 +3,7 @@ version: "3.2"
 services:
   schemabrowser:
     build:
-      context: ./docker
+      context: .
       dockerfile: Dockerfile
       args: []
     image: sd2e/schemabrowser:latest

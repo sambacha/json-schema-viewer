@@ -2,14 +2,14 @@
   "title": "JSON Schema Viewer",
   "name": "json-schema-viewer",
   "description": "Visualize JSON schemas using D3.js",
-  "version": "0.3.4",
-  "homepage": "https://github.com/jlblcc/json-schema-viewer",
+  "version": "0.4.0",
+  "homepage": "https://github.com/SD2E/json-schema-viewer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlblcc/json-schema-viewer.git"
+    "url": "https://github.com/SD2E/json-schema-viewer.git"
   },
   "author": {
-    "name": "Josh Bradley"
+    "name": "opensource@tacc.cloud"
   },
   "//": "The following FQDN is the endpoint for your assets (no trailing slash):",
   "production": "http://jlblcc.github.io/json-schema-viewer",

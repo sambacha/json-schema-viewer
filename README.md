@@ -49,6 +49,15 @@ Built using:
     - Python: `python -m SimpleHTTPServer 9001`
     - php 5.4+: `php -S localhost:9001`
 
+## Using Docker
+
+ 1. Clone repository: `git clone https://github.com/jlblcc/json-schema-viewer.git`
+ 2. Enter project directory: `cd json-schema-viewer`
+ 3. Run `docker-compose build` followed by `docker-compose up --force-recreate`
+ 4. (Optional) Shut down with `docker-compose down`
+
+If you are running in `prod` mode, the web app will be at http://localhost:9005/, and either http://localhost:9005/dev.html or http://localhost:9005/basic.html if you're in `dev` mode
+
 ## Use in Browser
 ```js
           (function($) {
