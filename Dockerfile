@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ARG JSV_SCHEMA_URI=https://sd2e.github.io/python-datacatalog/schemas/sample_set.json
+ARG JSV_SCHEMA_URI=https://schema.catalog.sd2e.org/schemas/sample_set.json
 ARG JSV_SCHEMA_VERSION=1.0.0
 ARG GRUNT_MODE=dev
 
@@ -30,7 +30,7 @@ WORKDIR /json-schema-viewer
 RUN bower install --allow-root && \
     npm install
 
-# COPY docker/tv4.js /json-schema-viewer/bower_components/tv4/tv4.js
+COPY docker/tv4.js /json-schema-viewer/bower_components/tv4/tv4.js
 
 RUN grunt $GRUNT_MODE
 

@@ -12,7 +12,7 @@ if (typeof JSV === 'undefined') {
         /**
          * The root schema to load.
          */
-        schema: 'https://sd2e.github.io/python-datacatalog/schemas/sample_set.json',
+        schema: 'https://schema.catalog.sd2e.org/schemas/sample_set.json',
         /**
          * If true, render diagram only on init, without the jQuery Mobile UI.
          * The legend and nav tools will be rendered with any event listeners.
