@@ -21,11 +21,11 @@
     "grunt-contrib-concat": "~1",
     "grunt-contrib-copy": "~1",
     "grunt-contrib-jshint": "~1",
-    "grunt-contrib-sass": "~1",
     "grunt-contrib-uglify": "~2",
     "grunt-contrib-watch": "~1",
     "grunt-env": "~0",
-    "grunt-preprocess": "~4"
+    "grunt-preprocess": "~4",
+    "sass": "^1.26.11"
   },
   "scripts": {
     "dev": "grunt",
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "grunt-contrib-connect": "^1",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-gh-pages": "^2",
     "grunt-jsdoc": "^2"
   }
