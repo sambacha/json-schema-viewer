@@ -1,28 +1,18 @@
 ---
+os: linux
+dist: xenial
+
 language: node_js
 node_js:
   - "8"
+  - "10"
+#  - "12"
 
-sudo: required
-dist: xenial
 
 addons:
   chrome: stable
 
-cache:
-  directories:
-    - $HOME/.npm
-
-env:
-  global:
-    # See https://git.io/vdao3 for details.
-    - JOBS=1
-
-before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-
 install:
   - npm install
-  - bower install
+
+scripts: true
