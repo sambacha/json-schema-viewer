@@ -15,6 +15,8 @@
   "production": "http://sambacha.github.io/json-schema-viewer",
   "license": "Unlicense",
   "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
     "grunt": "~0",
     "grunt-cli": "~1",
     "grunt-contrib-clean": "~1",
@@ -24,7 +26,8 @@
     "grunt-contrib-uglify": "~2",
     "grunt-contrib-watch": "~1",
     "grunt-env": "~0",
-    "grunt-preprocess": "~4"
+    "grunt-preprocess": "~4",
+    "uglify-js": "^3.11.0"
   },
   "scripts": {
     "dev": "grunt",
@@ -33,6 +36,7 @@
     "test": "grunt init"
   },
   "devDependencies": {
+    "eslint": "^7.10.0",
     "grunt-contrib-connect": "^1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-gh-pages": "^2",
