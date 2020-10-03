@@ -1,0 +1,2 @@
+/*! JSON Schema Viewer v0.4.0 - For included libraries, see source for additional licensing info. | https://github.com/sambacha/json-schema-viewer */
+!function(a){var b=window.location.hash,c=b.match(/v=([^\&]+)/);window.jsvInitPath=!!c&&c[1],window.location.hash=b.match(/#[^\?]+/)||""}(jQuery);
